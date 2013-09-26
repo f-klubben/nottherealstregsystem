@@ -1,0 +1,1 @@
+web: gunicorn stregsystem.wsgi
