@@ -1,0 +1,9 @@
+# Make sure line endings for well known file types are always text and correct
+# line endings
+*.py text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.less text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+
