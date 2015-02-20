@@ -1,0 +1,144 @@
+[
+{
+   "pk": 1,
+   "fields": {
+      "_phone_number": "88885555",
+      "username": "Test",
+      "name": "Test Chesterson",
+      "join_date": "2015-03-02T20:59:09.849Z",
+      "note": "This is test, he is a happy user.",
+      "email": "test@example.com",
+      "_pin": "1234",
+      "active": true,
+      "number": 1
+   },
+   "model": "fembers.member"
+},
+{
+   "pk": 2,
+   "fields": {
+      "_phone_number": "",
+      "username": "undefined",
+      "name": "Bob Paulson",
+      "join_date": "2015-03-02T21:02:19.358Z",
+      "note": "This is Robert Paulson.\r\n\r\nWe can't talk about his organization.",
+      "email": "fight.club@example.com",
+      "_pin": "1234",
+      "active": true,
+      "number": 2
+   },
+   "model": "fembers.member"
+},
+{
+   "pk": 1,
+   "fields": {
+      "members": [
+         1,
+         2
+      ],
+      "name": "Everyone"
+   },
+   "model": "fembers.list"
+},
+{
+   "pk": 1,
+   "fields": {
+      "product": null,
+      "value": 9000,
+      "member": 1,
+      "name": ""
+   },
+   "model": "transactions.transaction"
+},
+{
+   "pk": 2,
+   "fields": {
+      "product": 2,
+      "value": -700,
+      "member": 1,
+      "name": ""
+   },
+   "model": "transactions.transaction"
+},
+{
+   "pk": 3,
+   "fields": {
+      "product": null,
+      "value": 0,
+      "member": null,
+      "name": "Nothing"
+   },
+   "model": "transactions.transaction"
+},
+{
+   "pk": 2,
+   "fields": {
+      "name": "Limfjordsporter"
+   },
+   "model": "catalog.product"
+},
+{
+   "pk": 3,
+   "fields": {
+      "name": "<h1>Fad\u00f8l (Tuborg/Classic)</h1>"
+   },
+   "model": "catalog.product"
+},
+{
+   "pk": 4,
+   "fields": {
+      "name": "<h1> Fad\u00f8l i personligt glas (Tuborg/Classic) </h1>"
+   },
+   "model": "catalog.product"
+},
+{
+   "pk": 2,
+   "fields": {
+      "listings": [
+         1,
+         2,
+         3
+      ],
+      "name": "Foobar"
+   },
+   "model": "catalog.pointofsale"
+},
+{
+   "pk": 1,
+   "fields": {
+      "product": 2,
+      "price": 700,
+      "number": 14,
+      "_name": ""
+   },
+   "model": "catalog.listing"
+},
+{
+   "pk": 2,
+   "fields": {
+      "product": 3,
+      "price": 2100,
+      "number": 65,
+      "_name": ""
+   },
+   "model": "catalog.listing"
+},
+{
+   "pk": 3,
+   "fields": {
+      "product": 4,
+      "price": 2500,
+      "number": 1765,
+      "_name": ""
+   },
+   "model": "catalog.listing"
+},
+{
+   "pk": 1,
+   "fields": {
+      "value": null,
+      "name": "\u00d8l"
+   },
+   "model": "catalog.tag"
+}
+]
