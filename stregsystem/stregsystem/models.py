@@ -25,7 +25,6 @@ class Member(models.Model):
     active = models.BooleanField(default=True)
     _pin = models.CharField(verbose_name="pin",
                             max_length=128,
-                            validators=[validate_pin],
                             blank=True,
                             null=True)
     note = models.TextField(blank=True)
@@ -66,6 +65,7 @@ class Member(models.Model):
 
     @pin.setter
     def pin(self, new_pin):
+        validate_pin(new_pin)
         self._pin = hashers.make_password(new_pin)
 
     def check_pin(self, pin):
