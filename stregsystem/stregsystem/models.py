@@ -4,11 +4,14 @@ from django.core.exceptions import ValidationError
 import re
 
 from stregsystem import utils
+
+
 # TODO these validators might belong to Member?
 def validate_pin(value):
     msg = "Invalid pin"
     if re.match('\d{4}$', value) is None:
         raise ValidationError(msg)
+
 
 def validate_phone_number(number):
     msg = "{} is an invalid phone number"
@@ -35,7 +38,7 @@ class Member(models.Model):
                                      validators=[validate_phone_number])
 
     def phone_number_format(self):
-        if len(self.phone_number)%2:
+        if len(self.phone_number) % 2:
             n = self.phone_number[1:]
             res = self.phone_number[0] + ' '
         else:

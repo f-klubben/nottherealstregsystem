@@ -2,16 +2,17 @@ from django.test import TestCase
 from stregsystem import models
 from django.core.exceptions import ValidationError
 
+
 class MemberPhoneNumberTestCase(TestCase):
-    def  test_phone_number_set_success_space(self):
+    def test_phone_number_set_success_space(self):
         m = models.Member(phone_number='12 34')
         self.assertEqual(m.phone_number, '1234')
 
-    def  test_phone_number_set_success_dash(self):
+    def test_phone_number_set_success_dash(self):
         m = models.Member(phone_number='12-34')
         self.assertEqual(m.phone_number, '1234')
 
-    def  test_phone_number_set_success_underscore(self):
+    def test_phone_number_set_success_underscore(self):
         m = models.Member(phone_number='12_34')
         self.assertEqual(m.phone_number, '1234')
 
@@ -43,7 +44,8 @@ class MemberPhoneNumberTestCase(TestCase):
         self.assertEqual(models.validate_phone_number('12345678'), None)
 
     def test_phone_number_validator_success_long(self):
-        self.assertEqual(models.validate_phone_number('1234567890123456'), None)
+        self.assertEqual(models.validate_phone_number('1234567890123456'),
+                         None)
 
 
 class MemberPinTestCase(TestCase):
@@ -57,11 +59,11 @@ class MemberPinTestCase(TestCase):
         self.assertTrue(self.member.check_pin('1234'))
 
     def test_change_pin_fail(self):
-        self.assertFalse(self.member.change_pin('2234','4321'))
+        self.assertFalse(self.member.change_pin('2234', '4321'))
         self.assertFalse(self.member.check_pin('4321'))
 
     def test_change_pin_success(self):
-        self.assertTrue(self.member.change_pin('1234','4321'))
+        self.assertTrue(self.member.change_pin('1234', '4321'))
         self.assertTrue(self.member.check_pin('4321'))
 
     def test_pin_validator_fail_short(self):
