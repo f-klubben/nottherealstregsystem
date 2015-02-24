@@ -18,7 +18,7 @@ before_script:
 
 script:
     - stregsystem/manage.py test
-    - coverage run stregsystem/manage.py test
+    - coverage run --source=stregsystem stregsystem/manage.py test
 
 after_success:
     - coveralls
