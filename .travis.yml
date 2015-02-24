@@ -6,7 +6,9 @@ python:
 install: "pip install -r requirements.txt"
 
 before_script:
-    - "flake8 --exclude=migrations stregsystem"
+    - "chmod -R +x ./bin"
+    - "./bin/isort.sh"
+    - "flake8 --exclude=migrations --max-complexity 10 stregsystem"
 
 script:
     - "stregsystem/manage.py test"
