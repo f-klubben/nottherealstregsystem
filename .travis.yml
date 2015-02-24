@@ -1,12 +1,24 @@
 language: python
 
 python:
-    - "3.4"
+    - 3.4
 
-install: "pip install -r requirements.txt"
+addons:
+    postgresql: "9.4"
+
+install:
+    - pip install -r requirements.txt
 
 before_script:
-    - "flake8 --exclude=migrations stregsystem"
+    - chmod -R +x ./bin
+    - ./bin/isort.sh
+    - flake8 --exclude=migrations --max-complexity 10 stregsystem
+    - psql -c 'create database stregsystem;' -U postgres
+    - export DJANGO_SETTINGS_MODULE=stregsystem.settings.travis
 
 script:
-    - "stregsystem/manage.py test"
+    - stregsystem/manage.py test
+    - coverage run --source=stregsystem stregsystem/manage.py test
+
+after_success:
+    - coveralls
