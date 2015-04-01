@@ -1,9 +1,0 @@
-Django==1.7.4
-flake8==2.3.0
-isort==3.9.6
-mccabe==0.3
-natsort==3.5.2
-pep8==1.6.2
-pies==2.6.3
-psycopg2==2.6
-pyflakes==0.8.1
