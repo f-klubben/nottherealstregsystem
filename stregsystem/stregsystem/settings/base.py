@@ -39,7 +39,12 @@ DJANGO_APPS = (
 
 THIRD_PARTY_APPS = ()
 
-PROJECT_APPS = ()
+PROJECT_APPS = (
+    'stregsystem',
+    'fembers',
+    'catalog',
+    'finance',
+)
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 
