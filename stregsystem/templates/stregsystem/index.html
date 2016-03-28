@@ -1,0 +1,69 @@
+{% extends "stregsystem/base.html" %}
+
+{% block content %}
+
+    <strong><p class="text-center">Du kan "sætte streger" på to forskellige måder:</p></strong>
+    
+    <ol>
+        <li>
+            Indtast dit brugernavn nedenfor. Du vil så blive præsenteret for interaktiv menu.
+        </li>
+        <li>
+            Indtast dit brugernavn <em>og</em> et produkt number (adskilt med "space"). Købet vil blive direkte registreret uden yderligere input. Under feltet vil der vises en bekræftelse af købet.
+        </li>
+    </ol>
+
+    <div class="row">
+        <center>
+            <form action="/sale/" method="post">
+                <div class="input-group">
+                    {% csrf_token %}
+                    <input tabindex="1" type="text" class="from-control" id="quickbuy" name="quickbuy">
+                    <button tabindex="2" type="submit" class="btn btn-sm btn-default">Køb!</button>
+                </div>
+            </form>
+        </center>
+    </div>
+
+    {% if bought %}
+    <p class="text-center">{{ bought }}</p>
+    {% endif %}
+
+    {% if products %}
+    <div class="row"> 
+        <div class="col-sm-8 col-sm-offset-2">
+            <div>
+                <ul class="list-group">
+                 {% for nr in "xx" %}
+                 <div class="col-sm-6">
+                 <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-sm-2">Number</div>
+                        <div class="col-sm-8">Produkt</div>
+                        <div class="col-sm-2">Pris</div>
+                    </div>
+                 </li>
+                 </div>
+                 {% endfor %}
+                 {% for product in products %}
+                 <div class="col-sm-6">
+                 <li class="list-group-item">
+                     <div class="row">
+                         <div class="col-sm-2">{{product.number}}</div>
+                         <div class="col-sm-8">{{product.name}}</div>
+                         <div class="col-sm-2">{{product.price}} kr</div>
+                     </div>
+                 </li>
+                 </div>
+                 {% endfor %}
+                </ul>
+            </div>
+        </div> 
+    </div>
+    {% else %}
+    <center>
+        <p>Ingen produkter</p>
+    </center>
+    {% endif %}
+
+{% endblock %}
