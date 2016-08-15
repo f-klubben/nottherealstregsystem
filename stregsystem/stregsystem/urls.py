@@ -5,5 +5,5 @@ from stregsystem.views import *
 urlpatterns = [
     url(r'^$', index),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^sale/', sale)
+    url(r'^quick/', quick)
 ]

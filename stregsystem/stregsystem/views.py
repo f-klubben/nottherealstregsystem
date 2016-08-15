@@ -1,28 +1,27 @@
 from django.http import HttpResponse
 from django.template import RequestContext
 from django.template.loader import get_template
+from django.shortcuts import *
 from catalog.models import *
 
 def index(request):
-    template = get_template('stregsystem/index.html')
-    listings = Listing.objects.all()
-    variables = RequestContext(request, {
+    args = {
         'head_title': 'Stregsystem',
-        'products': listings,
-    })
-    output = template.render(variables)
-    return HttpResponse(output)
+        'products': Listing.objects.all()
+    }
+    return render(request, 'stregsystem/index.html', args)
 
+def quick(request):
+		print(request.POST['quickbuy'])
+		return HttpResponse("Not implemented yet.")
+    
 def sale(request):
-    template = get_template('stregsystem/index.html')
-    listings = Listing.objects.all()
-    variables = RequestContext(request, {
-        'head_title': 'Stregsystem',
-        'products': listings,
-        'bought': 'You just bought 1000L milk'
-    })
-    output = template.render(variables)
-    return HttpResponse(output)
+		args = {
+			'head_title': 'Stregsystem',
+			'products': Listing.objects.all(),
+			'bought': 'You just bought 1000L milk.'
+		}
+		return render(request, 'stregsystem/index.html',args)
 
-def userinfo(request):
+def usermenu(request):
     return HttpResponse("Not implemented yet.")

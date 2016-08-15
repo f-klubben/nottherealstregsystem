@@ -1,7 +1,6 @@
 {% extends "stregsystem/base.html" %}
 
 {% block content %}
-
     <strong><p class="text-center">Du kan "sætte streger" på to forskellige måder:</p></strong>
     
     <ol>
@@ -15,10 +14,10 @@
 
     <div class="row">
         <center>
-            <form action="/sale/" method="post">
+            <form action="/quick/" method="post">
                 <div class="input-group">
                     {% csrf_token %}
-                    <input tabindex="1" type="text" class="from-control" id="quickbuy" name="quickbuy">
+                    <input tabindex="1" type="text" class="from-control" id="quickbuy" name="quickbuy" value="">
                     <button tabindex="2" type="submit" class="btn btn-sm btn-default">Køb!</button>
                 </div>
             </form>
@@ -39,8 +38,8 @@
                  <li class="list-group-item">
                     <div class="row">
                         <div class="col-sm-2">Number</div>
-                        <div class="col-sm-8">Produkt</div>
-                        <div class="col-sm-2">Pris</div>
+                        <div class="col-sm-6">Produkt</div>
+                        <div class="col-sm-4">Pris</div>
                     </div>
                  </li>
                  </div>
@@ -50,8 +49,8 @@
                  <li class="list-group-item">
                      <div class="row">
                          <div class="col-sm-2">{{product.number}}</div>
-                         <div class="col-sm-8">{{product.name}}</div>
-                         <div class="col-sm-2">{{product.price}} kr</div>
+                         <div class="col-sm-6">{{product.name}}</div>
+                         <div class="col-sm-4">{{product.price}} kr</div>
                      </div>
                  </li>
                  </div>
@@ -65,5 +64,4 @@
         <p>Ingen produkter</p>
     </center>
     {% endif %}
-
 {% endblock %}
