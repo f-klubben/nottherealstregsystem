@@ -1,3 +1,7 @@
+# Deprecated
+This version of the Stregsystem is not in use. See https://github.com/f-klubben/stregsystemet
+
+
 [![Build Status](https://travis-ci.org/f-klubben/stregsystem.svg?branch=master)](https://travis-ci.org/f-klubben/stregsystem) [![Coverage Status](https://coveralls.io/repos/f-klubben/stregsystem/badge.svg)](https://coveralls.io/r/f-klubben/stregsystem)
 
 The Stregsystem is used at F-Klubben to pay for goods bought at Strandvejen and for signup to various events held by F-klubben. The main development and maintenance of the Stregsystem is maintained by FIT and daily use is handled by TREO.
